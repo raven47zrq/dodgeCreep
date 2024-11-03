@@ -42,8 +42,9 @@ script = ExtResource("1_ubgad")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_sra8b")
-animation = &"walk"
+animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_dhnil")

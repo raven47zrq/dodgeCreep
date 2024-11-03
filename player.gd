@@ -40,10 +40,18 @@ func _process(delta: float) -> void:
 		#$AnimatedSprite2D.flip_v = velocity.y > 0
 		#
 	#position += velocity * delta
-	var old_position = position
-	look_at(get_global_mouse_position())
+	#var old_position = position
+	#var old_rotation = rotation
+	if position != get_global_mouse_position():
+		#look_at(get_global_mouse_position())
+		rotation = lerp_angle(rotation, (get_global_mouse_position() - position).normalized().angle(), 0.1)
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
 	position = get_global_mouse_position()
 	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	
 	
 	#rotation = (position - old_position).rotation
 	
